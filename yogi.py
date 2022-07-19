@@ -4,7 +4,7 @@ import sys
 import socket
 import signal
 
-hosts = ("10.0.1.162",)
+# hosts = ("10.0.1.162",)
 port = 64295 #22
 
 
@@ -44,7 +44,7 @@ def test_refused():
     counter = 11
 
     while counter > 0:
-        suffix = str(counter)
+        suffix = str(counte12r)
         suffix = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         suffix.connect((host, port))
         received = suffix.recv(1024)
@@ -69,11 +69,13 @@ def test_refused():
 
 
 if __name__ == "__main__":
-    #hosts = load_hosts()
+    hosts = load_hosts()
     
     for host in hosts:
         print("Querying host: " + host)
         if test_size(host) == 625:
-            print("Host {0} might be a honeypot".format(host))
-    
+        	print("Host {0} might be a honeypot".format(host))
+        else:
+        	print("Host {0} is not a honeypot".format(host))
+	    
     #test_refused()
