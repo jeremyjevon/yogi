@@ -44,7 +44,7 @@ def test_refused():
     counter = 11
 
     while counter > 0:
-        suffix = str(counte12r)
+        suffix = str(counter)
         suffix = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         suffix.connect((host, port))
         received = suffix.recv(1024)
@@ -77,5 +77,5 @@ if __name__ == "__main__":
         	print("Host {0} might be a honeypot".format(host))
         else:
         	print("Host {0} is not a honeypot".format(host))
-	    
+	
     #test_refused()
